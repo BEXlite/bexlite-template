@@ -1,15 +1,20 @@
 {
-  "name": "todos",
-  "version": "1.0.50",
+  "name": "bexlite-template",
+  "version": "0.1.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "tw:run": "bunx tailwindcss -i ./src/views/styles/input.css -o ./public/global.css --watch",
+    "dev": "bun run --watch src/main.ts",
+    "start": "concurrently \"bun dev\" \"bun tw:run\""
   },
   "dependencies": {
+    "@elysiajs/html": "^0.8.0",
+    "@elysiajs/static": "^0.8.1",
     "elysia": "latest"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "concurrently": "^8.2.2",
+    "tailwindcss": "^3.4.1"
   },
   "module": "src/index.js"
 }
